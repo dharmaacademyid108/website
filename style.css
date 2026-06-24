@@ -9,15 +9,15 @@
 /* ── CSS Variables ────────────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg:          #FAF8F4;
-  --color-bg-alt:      #F2EAE0;
-  --color-bg-dark:     #2A1F14;
-  --color-ink:         #2A1F14;
-  --color-ink-muted:   #7A6A55;
-  --color-accent:      #8B4513;
-  --color-accent-2:    #C8962A;
-  --color-accent-hover:#6B3410;
-  --color-border:      #DDD0C0;
+  --color-bg:          #FFF5FB;
+  --color-bg-alt:      #F5E6FF;
+  --color-bg-dark:     #3B0764;
+  --color-ink:         #2D0553;
+  --color-ink-muted:   #9D5FC5;
+  --color-accent:      #EC4899;
+  --color-accent-2:    #A855F7;
+  --color-accent-hover:#DB2777;
+  --color-border:      #E9D5FF;
   --color-white:       #FFFFFF;
 
   /* Typography */
@@ -279,7 +279,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Hero with no image — fallback warm gradient */
 .hero-section--no-image {
-  background-image: linear-gradient(135deg, #3D1F0A 0%, #6B3A1F 50%, #8B4513 100%);
+  background-image: linear-gradient(135deg, #4C0080 0%, #C026D3 50%, #EC4899 100%);
 }
 
 /* ── Content Split ────────────────────────────────────────── */
