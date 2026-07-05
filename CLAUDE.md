@@ -17,6 +17,7 @@ website/
 ├── style.css           ← all shared styles
 ├── main.js             ← mobile nav, scroll-reveal, scroll-to-top
 └── docs/               ← design specs — READ THESE before making decisions
+    ├── GUIDELINES.md    ← plain-language source of truth, Bobo edits this directly. Check this FIRST for content/design direction.
     ├── PROJECT_OVERVIEW.md
     ├── SITE_STRUCTURE.md
     ├── HOMEPAGE_PLAN.md
@@ -27,24 +28,24 @@ website/
     └── GENERAL_CLAUDE_INSTRUCTION.md
 ```
 
+**Note:** `GUIDELINES.md` is the plain-language, Bobo-editable version of the plan. If it ever conflicts with the other technical docs, `GUIDELINES.md` wins — it reflects the latest direct decisions.
+
 ## Design system (key CSS variables in style.css)
 ```css
---color-bg:          #FAF8F4;   /* warm cream */
---color-bg-alt:      #F2EAE0;
---color-bg-dark:     #2A1F14;   /* dark brown */
---color-accent:      #8B4513;   /* saddlebrown */
---color-accent-2:    #C8962A;   /* gold */
---font-display: 'Lora', Georgia, serif;
---font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+--color-bg:          #FFF8F1;   /* warm cream */
+--color-bg-alt:      #FFEFE2;   /* soft peach */
+--color-bg-dark:     #2B2420;   /* footer/dark sections */
+--color-accent:      #D97F56;   /* terracotta — links, icon tints */
+--color-primary:     #2F5D50;   /* deep teal — primary buttons, Japan banner */
+--font-body: 'Nunito', system-ui, sans-serif;
 --max-width: 1100px;
 ```
-CSS follows BEM-inspired naming: `.block__element--modifier`
+Warm, rounded, community-feel direction (confirmed 2026-07-05, replacing the earlier brown/gold and pink/purple "Lollipop" test — both retired). CSS follows BEM-inspired naming: `.block__element--modifier`. Logo mark and hero/section illustrations are hand-built placeholder SVGs in `assets/images/` — swap for real logo/photos when ready, same filenames/dimensions.
 
 ## Current state
-- Homepage (`index.html`) is complete with placeholder content
-- All 8 sections built: Hero, Who We Are, Legitimacy Banner, What We Teach, Classes, Events, Books, CTA
-- Remaining pages (about, lesson, event, book, contact, donation, privilege) are not yet built
-- Real content (photos, copy, social links, WhatsApp/email) is TBD — placeholders used throughout
+- Homepage (`index.html`) is rebuilt around the new `docs/GUIDELINES.md` direction: Hero, Who We Are, Japan Connection banner, What We Teach, 4 Activities (Kelas Intro, Good Karma Lab, Jadi Siswa Resmi, Acara Jepang), Recent Events, Books, Final CTA
+- Remaining pages (about, lesson, event, book, contact, donation, privilege) are not yet built — same design system, to be built next
+- Real content (photos, logo, copy details, social links, WhatsApp/email) is still placeholder
 
 ## Working rules
 - **No frameworks** — plain HTML/CSS/JS only

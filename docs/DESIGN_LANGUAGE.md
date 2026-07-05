@@ -1,6 +1,6 @@
 # DESIGN_LANGUAGE.md — Dharma Academy ID Website
 
-> **Status:** Section 2 (Color Palette) and Section 3 (Typography) are TBD — to be confirmed by the site owner. All other sections reflect confirmed decisions. Do not implement colors or fonts until these are finalized.
+> **Status:** Section 2 (Color Palette) and Section 3 (Typography) are confirmed as of 2026-07-05 (warm/rounded community direction). See values below.
 
 ## 1. Aesthetic Direction
 
@@ -15,37 +15,28 @@ Reference tone: The Japan HQ site (https://shinrankai.jp/) for credibility cues.
 
 ## 2. Color Palette
 
-> **[TBD — to be confirmed by site owner]**
->
-> Suggested direction: a palette anchored in warm neutrals with one or two accent colors evoking traditional Buddhist aesthetics (deep gold/saffron, deep maroon, or muted earth tones). Avoid bright/electric colors that feel modern-startup.
-
-Placeholder tokens (update when confirmed):
+Warm, rounded, community-forward — terracotta + deep teal on a cream base. Avoids both the overly formal "temple brown" look and anything bright/new-age.
 
 ```css
---color-bg:         /* TBD: primary background */
---color-bg-alt:     /* TBD: alternate section background (slightly different from main) */
---color-ink:        /* TBD: primary text color */
---color-ink-muted:  /* TBD: secondary/caption text */
---color-accent:     /* TBD: primary accent (buttons, links, highlights) */
---color-accent-2:   /* TBD: secondary accent (if needed) */
---color-border:     /* TBD: divider / subtle borders */
+--color-bg:          #FFF8F1;   /* cream */
+--color-bg-alt:      #FFEFE2;   /* soft peach */
+--color-bg-dark:     #2B2420;   /* footer / dark sections */
+--color-ink:         #2B2420;
+--color-ink-muted:   #6B5F52;
+--color-accent:      #D97F56;   /* terracotta — links, icon tints, highlights */
+--color-primary:     #2F5D50;   /* deep teal — primary buttons, Japan banner */
+--color-border:      #F0E0CC;
 ```
 
 ## 3. Typography
 
-> **[TBD — to be confirmed by site owner]**
->
-> Suggested direction:
-> - **Display (headings):** A serif font with a traditional or classical feel. Options: `Lora`, `Playfair Display`, `EB Garamond`.
-> - **Body:** A clean, readable sans-serif. Options: `Inter`, `Noto Sans`, `Plus Jakarta Sans` (good Indonesian character support).
-> - **Labels/Nav:** Same as body, slightly smaller, uppercase or medium weight.
-
-Placeholder:
+Single rounded, friendly sans-serif family used throughout (headings and body) — no separate serif display font.
 
 ```css
---font-display: /* TBD: serif font name */
---font-body:    /* TBD: sans-serif font name */
+--font-body: 'Nunito', system-ui, sans-serif;
 ```
+
+Weights used: 400 (body), 600, 700, 800 (headings, buttons, emphasis).
 
 **Font sizing scale (use these consistently):**
 

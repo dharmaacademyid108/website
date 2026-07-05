@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dharma Academy Indonesia — Belajar Ajaran Buddha Pureland</title>
-  <meta name="description" content="Dharma Academy Indonesia adalah lembaga belajar ajaran Buddha Jodo Shinshu yang berafiliasi dengan Shinrankai, Jepang. Kelas online untuk masyarakat Indonesia.">
+  <meta name="description" content="Dharma Academy Indonesia adalah komunitas belajar ajaran Buddha Jodo Shinshu yang berafiliasi dengan Shinrankai, Jepang. Kelas online gratis dan kegiatan komunitas untuk masyarakat Indonesia.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Dharma Academy Indonesia">
-  <meta property="og:description" content="Belajar ajaran Buddha Pureland (Jodo Shinshu) bersama guru berpengalaman yang terhubung langsung dengan Shinrankai, Jepang.">
+  <meta property="og:description" content="Belajar ajaran Buddha Pureland (Jodo Shinshu) bersama guru berpengalaman, terhubung langsung dengan Shinrankai, Jepang.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/og-image.webp">
+  <meta property="og:locale" content="id_ID">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -19,7 +20,7 @@
     "@type": "EducationalOrganization",
     "name": "Dharma Academy Indonesia",
     "url": "https://website-bwu.pages.dev",
-    "description": "Lembaga belajar ajaran Buddha Jodo Shinshu di Indonesia, berafiliasi dengan Shinrankai Jepang.",
+    "description": "Komunitas belajar ajaran Buddha Jodo Shinshu di Indonesia, berafiliasi dengan Shinrankai, Jepang.",
     "inLanguage": "id",
     "sameAs": ["https://shinrankai.jp/"]
   }
@@ -27,294 +28,251 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ══ HEADER / NAV ══════════════════════════════════════════ -->
-  <header class="site-header">
-    <nav class="site-nav">
-      <a href="index.html" class="site-nav__logo">
-        <span class="site-nav__logo-text">Dharma Academy<br>Indonesia</span>
-      </a>
-      <ul class="site-nav__links">
-        <li><a href="about.html">Tentang Kami</a></li>
-        <li><a href="lesson.html">Pelajaran</a></li>
-        <li><a href="event.html">Acara</a></li>
-        <li><a href="book.html">Buku</a></li>
-        <li><a href="contact.html" class="btn btn-primary">Hubungi Kami</a></li>
-      </ul>
-      <button class="site-nav__toggle" aria-label="Buka menu" aria-expanded="false">☰</button>
-    </nav>
-    <div class="site-nav__drawer" hidden>
-      <ul>
-        <li><a href="about.html">Tentang Kami</a></li>
-        <li><a href="lesson.html">Pelajaran</a></li>
-        <li><a href="event.html">Acara</a></li>
-        <li><a href="book.html">Buku</a></li>
-        <li><a href="contact.html" class="btn btn-primary">Hubungi Kami</a></li>
-      </ul>
+<header class="site-header">
+  <div class="wrap site-nav">
+    <a href="index.html" class="site-nav__logo">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Dharma Academy Indonesia">
+        <ellipse cx="32" cy="18" rx="9" ry="16" fill="#D97F56"/>
+        <ellipse cx="32" cy="18" rx="9" ry="16" fill="#D97F56" transform="rotate(72 32 32)"/>
+        <ellipse cx="32" cy="18" rx="9" ry="16" fill="#E4996F" transform="rotate(144 32 32)"/>
+        <ellipse cx="32" cy="18" rx="9" ry="16" fill="#D97F56" transform="rotate(216 32 32)"/>
+        <ellipse cx="32" cy="18" rx="9" ry="16" fill="#E4996F" transform="rotate(288 32 32)"/>
+        <circle cx="32" cy="32" r="7" fill="#2F5D50"/>
+      </svg>
+      <span>Dharma Academy Indonesia</span>
+    </a>
+    <ul class="site-nav__links">
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="lesson.html">Pelajaran</a></li>
+      <li><a href="event.html">Acara</a></li>
+      <li><a href="book.html">Buku</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Hubungi Kami</a></li>
+    </ul>
+    <button class="site-nav__toggle" aria-label="Buka menu" aria-expanded="false">&#9776;</button>
+  </div>
+  <div class="site-nav__drawer" hidden>
+    <ul>
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="lesson.html">Pelajaran</a></li>
+      <li><a href="event.html">Acara</a></li>
+      <li><a href="book.html">Buku</a></li>
+      <li><a href="contact.html" class="btn btn-primary">Hubungi Kami</a></li>
+    </ul>
+    <div class="site-nav__drawer__social">
+      <a href="#" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" aria-label="YouTube" target="_blank" rel="noopener">YouTube</a>
+      <a href="#" aria-label="WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
+<main>
 
-    <!-- ══ SECTION 1 — HERO ══════════════════════════════════════ -->
-    <section class="hero-section hero-section--no-image">
-      <div class="hero-section__content">
-        <h1>Belajar Ajaran Buddha dari<br>Guru yang Berpengalaman</h1>
-        <p class="hero-section__subtitle">
-          Dharma Academy Indonesia mengajarkan ajaran Buddha Jodo Shinshu (Pureland)
-          yang otentik — berafiliasi langsung dengan Shinrankai, Jepang.
-        </p>
-        <a href="lesson.html" class="btn btn-light">Daftar Kelas Intro</a>
+  <section class="home-hero reveal">
+    <div class="wrap home-hero__inner">
+      <div class="home-hero__text">
+        <p class="eyebrow">Jodo Shinshu &middot; Pureland Buddhism</p>
+        <h1>Belajar Ajaran Buddha, Bareng-Bareng</h1>
+        <p class="sub">Komunitas hangat untuk siapa saja yang ingin belajar Dharma — terhubung langsung dengan Shinrankai, Jepang.</p>
+        <a href="lesson.html" class="btn btn-primary">Daftar Kelas Intro</a>
       </div>
-    </section>
-
-    <!-- ══ SECTION 2 — WHO WE ARE ════════════════════════════════ -->
-    <section class="section-outer">
-      <div class="section">
-        <div class="content-split reveal">
-          <div class="content-split__image">
-            <div class="content-split__image--placeholder">
-              [Foto akan ditambahkan — temple Jepang atau foto kelas]
-            </div>
-          </div>
-          <div class="content-split__text">
-            <h2>Tentang Dharma Academy Indonesia</h2>
-            <p>
-              Dharma Academy Indonesia adalah lembaga pendidikan ajaran Buddha Jodo Shinshu
-              (Pureland Buddhism) yang didirikan untuk memperkenalkan ajaran Shinran Shonin
-              kepada masyarakat Indonesia.
-            </p>
-            <p>
-              Kami berafiliasi dengan <strong>Shinrankai</strong>, sebuah organisasi Buddhis
-              Jodo Shinshu yang berpusat di Jepang — untuk menjamin keaslian dan kedalaman ajaran
-              yang kami sampaikan.
-            </p>
-            <p>
-              Melalui kelas online, kami membuka kesempatan bagi siapa pun di seluruh Indonesia
-              untuk mempelajari ajaran Buddha yang otentik, dalam bahasa Indonesia.
-            </p>
-            <a href="about.html" class="btn btn-secondary">Pelajari Lebih Lanjut</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 3 — JAPAN CONNECTION / LEGITIMACY BANNER ═════ -->
-    <div class="legitimacy-banner">
-      <div class="legitimacy-banner__inner reveal">
-        <div class="legitimacy-banner__logo--placeholder">Logo</div>
-        <div class="legitimacy-banner__text">
-          <h3>Afiliasi Resmi</h3>
-          <p>Bagian dari Shinrankai, organisasi Buddhis Jodo Shinshu yang berpusat di Jepang</p>
-          <a href="https://shinrankai.jp/" target="_blank" rel="noopener">Kunjungi Shinrankai Japan →</a>
-        </div>
+      <div class="home-hero__image">
+        <img src="assets/images/illustrations/hero-illustration.svg" alt="Ilustrasi suasana tenang belajar Dharma" width="800" height="500" loading="eager">
       </div>
     </div>
+  </section>
 
-    <!-- ══ SECTION 4 — WHAT WE TEACH ════════════════════════════ -->
-    <div class="section-outer" style="background: var(--color-bg-alt);">
-      <div class="section">
-        <div class="content-split content-split--reverse reveal">
-          <div class="content-split__image">
-            <div class="content-split__image--placeholder">
-              [Foto akan ditambahkan — suasana pengajaran]
-            </div>
-          </div>
-          <div class="content-split__text">
-            <h2>Apa yang Kami Ajarkan?</h2>
-            <p>
-              Jodo Shinshu (Pureland Buddhism) adalah ajaran Buddha yang menekankan bahwa
-              keselamatan tersedia untuk semua orang — bukan hanya bagi mereka yang mampu
-              berlatih keras, tetapi bagi semua makhluk biasa yang tulus.
-            </p>
-            <p>
-              Ajaran ini disampaikan oleh Shinran Shonin (1173–1263) dan telah dipraktikkan
-              selama berabad-abad di Jepang. Kami meneruskan tradisi ini dalam bahasa
-              Indonesia agar dapat dijangkau oleh semua orang.
-            </p>
-            <a href="lesson.html" class="btn btn-secondary">Lihat Kurikulum</a>
-          </div>
+  <section class="section reveal">
+    <div class="wrap content-split">
+      <div class="content-split__image">
+        <img src="assets/images/illustrations/community-illustration.svg" alt="Ilustrasi komunitas belajar bersama" width="800" height="500" loading="lazy">
+      </div>
+      <div class="content-split__text">
+        <h2>Siapa Kami</h2>
+        <p>Dharma Academy Indonesia adalah komunitas belajar Buddha yang terbuka untuk siapa saja, tanpa perlu latar belakang agama tertentu. Kami bagian dari Shinrankai, organisasi Buddhis Jodo Shinshu yang berpusat di Toyama, Jepang.</p>
+        <a href="about.html" class="link">Kenali Kami Lebih Dekat &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="japan-banner reveal">
+    <div class="wrap japan-banner__inner">
+      <div>
+        <h3>Bagian dari Shinrankai, Jepang</h3>
+        <p>Tradisi Jodo Shinshu langsung dari Toyama, Jepang.</p>
+      </div>
+      <a href="https://shinrankai.jp/" target="_blank" rel="noopener">shinrankai.jp &#8599;</a>
+    </div>
+  </div>
+
+  <section class="section reveal">
+    <div class="wrap content-split content-split--reverse">
+      <div class="content-split__image">
+        <img src="assets/images/illustrations/teaching-illustration.svg" alt="Ilustrasi ajaran dan buku Dharma" width="800" height="500" loading="lazy">
+      </div>
+      <div class="content-split__text">
+        <h2>Apa yang Kami Ajarkan</h2>
+        <p>Ajaran Buddha adalah praktik harian yang bisa dijalani siapa saja. Semangat kami adalah <em>jiri rita</em> — kebahagiaan yang tumbuh saat kita ikut membahagiakan orang lain.</p>
+        <a href="lesson.html" class="link">Lihat Kurikulum &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Kegiatan Kami</h2>
+        <p>Empat cara untuk mulai belajar dan bertumbuh bersama kami.</p>
+      </div>
+      <div class="card-grid-4">
+        <div class="activity-card">
+          <div class="activity-card__icon">&#128250;</div>
+          <h3>Kelas Intro Online</h3>
+          <p>Gratis &middot; 8 topik &middot; Zoom</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card__icon">&#127793;</div>
+          <h3>Good Karma Lab</h3>
+          <p>Tatap muka &middot; Denpasar &middot; 2x/bulan</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card__icon">&#128214;</div>
+          <h3>Jadi Siswa Resmi</h3>
+          <p>40 topik &middot; materi lengkap</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-card__icon">&#9992;&#65039;</div>
+          <h3>Ikut Acara di Jepang</h3>
+          <p>Toyama &middot; Mei &amp; Oktober &middot; anggota</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ══ SECTION 5 — OUR CLASSES ══════════════════════════════ -->
-    <section class="section-outer">
-      <div class="section">
-        <div class="section-header reveal">
-          <h2>Kelas yang Tersedia</h2>
-          <p class="subtitle">
-            Tersedia secara online via Zoom — dapat diikuti dari mana saja di Indonesia.
-          </p>
-        </div>
-        <div class="feature-grid">
-          <div class="feature-item reveal">
-            <span class="feature-item__icon">🌸</span>
-            <div>
-              <h3>Kelas Intro</h3>
-              <p>Pengenalan awal ajaran Buddha Jodo Shinshu untuk peserta baru. Gratis dan terbuka untuk umum.</p>
-            </div>
-          </div>
-          <div class="feature-item reveal">
-            <span class="feature-item__icon">📖</span>
-            <div>
-              <h3>Kelas Reguler</h3>
-              <p>Studi mendalam ajaran Shinran Shonin secara berkelanjutan bagi peserta terdaftar.</p>
-            </div>
-          </div>
-          <div class="feature-item reveal">
-            <span class="feature-item__icon">🎥</span>
-            <div>
-              <h3>Format Online (Zoom)</h3>
-              <p>Semua kelas dilaksanakan secara online, memudahkan peserta dari seluruh Indonesia.</p>
-            </div>
+  <section class="section reveal" style="background:var(--color-bg-alt);">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Kegiatan Terbaru</h2>
+        <p>Bukti bahwa kami komunitas yang aktif dan hidup.</p>
+      </div>
+      <div class="card-grid-3">
+        <div class="card">
+          <div class="card__image"></div>
+          <div class="card__body">
+            <h3 class="card__title">Good Karma Lab — Sesi Juni</h3>
+            <p class="card__text">Diskusi cerita dari buku Kentetsu Takamori.</p>
+            <a href="event.html" class="link">Lihat Detail &#8594;</a>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="lesson.html" class="btn btn-primary">Lihat Detail Kelas</a>
+        <div class="card">
+          <div class="card__image"></div>
+          <div class="card__body">
+            <h3 class="card__title">Kelas Intro Angkatan 5</h3>
+            <p class="card__text">Sesi Zoom bersama peserta baru.</p>
+            <a href="event.html" class="link">Lihat Detail &#8594;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image"></div>
+          <div class="card__body">
+            <h3 class="card__title">Acara Tahunan di Toyama</h3>
+            <p class="card__text">Anggota berkumpul langsung di Jepang.</p>
+            <a href="event.html" class="link">Lihat Detail &#8594;</a>
+          </div>
         </div>
       </div>
-    </section>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="event.html" class="btn btn-secondary">Lihat Semua Acara</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- ══ SECTION 6 — RECENT EVENTS ════════════════════════════ -->
-    <section class="section-outer" style="background: var(--color-bg-alt);">
-      <div class="section">
-        <div class="section-header reveal">
-          <h2>Acara Terbaru</h2>
-          <p class="subtitle">Kegiatan dan pertemuan komunitas Dharma Academy Indonesia.</p>
-        </div>
-        <div class="card-grid">
-          <div class="card reveal">
-            <div class="card__img--placeholder">[Foto Acara]</div>
-            <div class="card__body">
-              <span class="card__tag">Acara</span>
-              <h3 class="card__title">Nama Acara 1</h3>
-              <p class="card__text">Deskripsi singkat acara ini akan ditambahkan di sini.</p>
-              <a href="event.html" class="btn btn-secondary">Detail</a>
-            </div>
-          </div>
-          <div class="card reveal">
-            <div class="card__img--placeholder">[Foto Acara]</div>
-            <div class="card__body">
-              <span class="card__tag">Acara</span>
-              <h3 class="card__title">Nama Acara 2</h3>
-              <p class="card__text">Deskripsi singkat acara ini akan ditambahkan di sini.</p>
-              <a href="event.html" class="btn btn-secondary">Detail</a>
-            </div>
-          </div>
-          <div class="card reveal">
-            <div class="card__img--placeholder">[Foto Acara]</div>
-            <div class="card__body">
-              <span class="card__tag">Acara</span>
-              <h3 class="card__title">Nama Acara 3</h3>
-              <p class="card__text">Deskripsi singkat acara ini akan ditambahkan di sini.</p>
-              <a href="event.html" class="btn btn-secondary">Detail</a>
-            </div>
+  <section class="section reveal">
+    <div class="wrap">
+      <div class="section-header">
+        <h2>Buku</h2>
+        <p>Materi bacaan untuk memperdalam pemahaman Dharma.</p>
+      </div>
+      <div class="card-grid-3">
+        <div class="card">
+          <div class="card__image"></div>
+          <div class="card__body">
+            <h3 class="card__title">Something You Forgot Along the Way</h3>
+            <p class="card__text">Kentetsu Takamori &middot; Rp 85.000</p>
+            <a href="book.html" class="link">Lihat Detail &#8594;</a>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="event.html" class="btn btn-secondary">Lihat Semua Acara</a>
+        <div class="card">
+          <div class="card__image"></div>
+          <div class="card__body">
+            <h3 class="card__title">Pengantar Jodo Shinshu</h3>
+            <p class="card__text">Dharma Academy Indonesia &middot; Rp 65.000</p>
+            <a href="book.html" class="link">Lihat Detail &#8594;</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__image"></div>
+          <div class="card__body">
+            <h3 class="card__title">Kumpulan Cerita Dharma</h3>
+            <p class="card__text">Dharma Academy Indonesia &middot; Rp 70.000</p>
+            <a href="book.html" class="link">Lihat Detail &#8594;</a>
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- ══ SECTION 7 — BOOKS ═════════════════════════════════════ -->
-    <section class="section-outer">
-      <div class="section">
-        <div class="section-header reveal">
-          <h2>Buku Dharma</h2>
-          <p class="subtitle">Sumber bacaan ajaran Buddha Jodo Shinshu dalam bahasa Indonesia.</p>
-        </div>
-        <div class="card-grid">
-          <div class="card reveal">
-            <div class="card__img--placeholder">[Sampul Buku]</div>
-            <div class="card__body">
-              <span class="card__tag">Buku</span>
-              <h3 class="card__title">Judul Buku 1</h3>
-              <p class="card__text">Deskripsi singkat buku ini akan ditambahkan di sini.</p>
-              <a href="book.html" class="btn btn-secondary">Detail</a>
-            </div>
-          </div>
-          <div class="card reveal">
-            <div class="card__img--placeholder">[Sampul Buku]</div>
-            <div class="card__body">
-              <span class="card__tag">Buku</span>
-              <h3 class="card__title">Judul Buku 2</h3>
-              <p class="card__text">Deskripsi singkat buku ini akan ditambahkan di sini.</p>
-              <a href="book.html" class="btn btn-secondary">Detail</a>
-            </div>
-          </div>
-          <div class="card reveal">
-            <div class="card__img--placeholder">[Sampul Buku]</div>
-            <div class="card__body">
-              <span class="card__tag">Buku</span>
-              <h3 class="card__title">Judul Buku 3</h3>
-              <p class="card__text">Deskripsi singkat buku ini akan ditambahkan di sini.</p>
-              <a href="book.html" class="btn btn-secondary">Detail</a>
-            </div>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="book.html" class="btn btn-secondary">Lihat Semua Buku</a>
-        </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="book.html" class="btn btn-secondary">Lihat Semua Buku</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ══ SECTION 8 — FINAL CTA ════════════════════════════════ -->
-    <section class="cta-band">
-      <h2>Siap Memulai Perjalanan Dharma Anda?</h2>
-      <p class="subtitle">Bergabunglah dengan komunitas kami. Kelas terbuka untuk semua orang.</p>
-      <a href="contact.html" class="btn btn-light">Hubungi Kami</a>
-    </section>
+  <div class="cta-band reveal">
+    <div class="wrap">
+      <h2>Siap Mulai Perjalanan Dharma Anda?</h2>
+      <p>Hubungi kami untuk bergabung di kelas intro berikutnya.</p>
+      <a href="contact.html" class="btn btn-primary">Hubungi Kami</a>
+    </div>
+  </div>
 
-  </main>
+</main>
 
-  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
-  <footer class="site-footer">
+<footer class="site-footer">
+  <div class="wrap">
     <div class="site-footer__inner">
-      <div class="site-footer__brand">
-        <div class="site-footer__logo-text">Dharma Academy Indonesia</div>
-        <p>Lembaga belajar ajaran Buddha Jodo Shinshu (Pureland) yang berafiliasi dengan Shinrankai, Jepang.</p>
-        <div class="site-footer__social">
-          <a href="#" aria-label="Instagram">&#x1F4F7;</a>
-          <a href="#" aria-label="YouTube">&#x25B6;</a>
-          <a href="#" aria-label="WhatsApp">&#x1F4AC;</a>
-        </div>
+      <div>
+        <h4>Dharma Academy Indonesia</h4>
+        <p>Belajar Dharma, bareng-bareng.</p>
       </div>
-      <div class="site-footer__col">
-        <h4>Navigasi</h4>
-        <ul>
+      <div>
+        <h4>Tautan</h4>
+        <ul class="site-footer__links">
           <li><a href="about.html">Tentang Kami</a></li>
           <li><a href="lesson.html">Pelajaran</a></li>
           <li><a href="event.html">Acara</a></li>
           <li><a href="book.html">Buku</a></li>
-          <li><a href="contact.html">Hubungi Kami</a></li>
-          <li><a href="donation.html">Donasi</a></li>
+          <li><a href="contact.html">Kontak</a></li>
         </ul>
       </div>
-      <div class="site-footer__col">
-        <h4>Afiliasi</h4>
-        <ul>
-          <li><a href="https://shinrankai.jp/" target="_blank" rel="noopener">Shinrankai Japan</a></li>
-          <li><a href="privilege.html">Hak Istimewa</a></li>
-        </ul>
+      <div>
+        <h4>Ikuti Kami</h4>
+        <div class="site-footer__social">
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" aria-label="YouTube" target="_blank" rel="noopener">YouTube</a>
+          <a href="#" aria-label="WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <p style="margin-top:12px;">Bagian dari <a href="https://shinrankai.jp/" target="_blank" rel="noopener" style="color:#D9CFC3;">Shinrankai, Jepang</a></p>
       </div>
     </div>
-    <div class="site-footer__bottom">
-      <span>© 2025 Dharma Academy Indonesia. Hak cipta dilindungi.</span>
-      <span>Berafiliasi dengan <a href="https://shinrankai.jp/" target="_blank" rel="noopener">Shinrankai Japan</a></span>
-    </div>
-  </footer>
+    <div class="site-footer__bottom">&copy; 2026 Dharma Academy Indonesia</div>
+  </div>
+</footer>
 
-  <button id="scroll-top" hidden aria-label="Kembali ke atas"
-    style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--color-accent);color:#fff;border:none;cursor:pointer;font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:50;">
-    ↑
-  </button>
+<button id="scroll-top" class="scroll-top" aria-label="Kembali ke atas" hidden>&#8593;</button>
 
-  <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
