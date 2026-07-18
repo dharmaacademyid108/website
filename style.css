@@ -93,10 +93,22 @@ p:last-child { margin-bottom: 0; }
 .home-hero__image { flex: 1 1 480px; width: 100%; border-radius: var(--radius-card); overflow: hidden; }
 .home-hero__image img { width: 100%; height: auto; }
 
-/* ── Ink-wash accents ────────────────────────────────────────── */
-.ink-divider { display: flex; justify-content: center; padding: 4px 0; }
-.ink-divider img { width: 104px; height: 104px; mix-blend-mode: multiply; }
-.section-header .ink-accent { width: 88px; height: 88px; mix-blend-mode: multiply; margin: 0 auto 6px; }
+/* ── Ink-wash accents ─────────────────────────────────────────
+   Texture and framing — never standalone stamps. The PNGs carry
+   their own alpha, so they composite into the paper directly. */
+.ink-mini { width: 40px; height: auto; opacity: 0.72; flex-shrink: 0; }
+.page-hero .ink-accent { width: 60px; height: auto; opacity: 0.58; margin: 0 auto 16px; }
+.section-header .ink-accent { width: 56px; height: auto; opacity: 0.52; margin: 0 auto 14px; }
+
+/* Large, faint marks that bleed off a section edge */
+.ink-mark { position: absolute; pointer-events: none; user-select: none; opacity: 0.12; z-index: 0; height: auto; }
+.ink-mark--tr { top: -54px; right: -60px; width: 300px; }
+.ink-mark--tl { top: -46px; left: -64px; width: 280px; }
+.ink-mark--br { bottom: -60px; right: -54px; width: 300px; }
+.ink-mark--bl { bottom: -54px; left: -60px; width: 280px; }
+
+.section, .home-hero, .page-hero, .quote-band { position: relative; overflow: hidden; }
+.section > .wrap, .home-hero > .wrap, .page-hero > .wrap, .quote-band > .wrap { position: relative; z-index: 1; }
 
 /* ── Section generic ──────────────────────────────────────── */
 .section { padding: var(--spacing-section) 0; }
