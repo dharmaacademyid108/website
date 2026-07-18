@@ -36,22 +36,38 @@
     });
   }
 
-  /* ── Scroll-Reveal (IntersectionObserver) ─────────────────── */
+  /* ── Scroll-Reveal (IntersectionObserver) ───────────────────
+     Content is visible by default in CSS. We only opt into the
+     hidden-then-reveal behaviour once we know we can drive it, so
+     nothing can leave the page blank. */
   const revealEls = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window && revealEls.length) {
+    document.documentElement.classList.add('js-reveal');
+
+    const reveal = el => el.classList.add('visible');
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          reveal(entry.target);
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.05 });
 
     revealEls.forEach(el => observer.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('visible'));
+
+    // Hidden tabs are throttled, so the observer never runs while the
+    // page is in the background. Catch up whatever is on screen once
+    // the visitor actually looks at it.
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) return;
+      revealEls.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) reveal(el);
+      });
+    });
   }
 
   /* ── Scroll-to-Top ────────────────────────────────────────── */

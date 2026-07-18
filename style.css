@@ -93,19 +93,21 @@ p:last-child { margin-bottom: 0; }
 .home-hero__image { flex: 1 1 480px; width: 100%; border-radius: var(--radius-card); overflow: hidden; }
 .home-hero__image img { width: 100%; height: auto; }
 
-/* ── Ink-wash accents ─────────────────────────────────────────
-   Texture and framing — never standalone stamps. The PNGs carry
-   their own alpha, so they composite into the paper directly. */
-.ink-mini { width: 40px; height: auto; opacity: 0.72; flex-shrink: 0; }
-.page-hero .ink-accent { width: 60px; height: auto; opacity: 0.58; margin: 0 auto 16px; }
-.section-header .ink-accent { width: 56px; height: auto; opacity: 0.52; margin: 0 auto 14px; }
+/* ── Natural light ────────────────────────────────────────────
+   A soft wash where daylight would fall. Gives warmth and depth
+   with no symbolism attached — texture, not ornament. */
+.home-hero::before, .page-hero::before {
+  content: '';
+  position: absolute;
+  top: -30%; right: -12%;
+  width: 62%; height: 150%;
+  background: radial-gradient(ellipse at 65% 28%, rgba(255,253,247,0.95) 0%, rgba(255,253,247,0) 62%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-/* Large, faint marks that bleed off a section edge */
-.ink-mark { position: absolute; pointer-events: none; user-select: none; opacity: 0.12; z-index: 0; height: auto; }
-.ink-mark--tr { top: -54px; right: -60px; width: 300px; }
-.ink-mark--tl { top: -46px; left: -64px; width: 280px; }
-.ink-mark--br { bottom: -60px; right: -54px; width: 300px; }
-.ink-mark--bl { bottom: -54px; left: -60px; width: 280px; }
+/* ── Tonal section — wayfinding, not decoration ─────────────── */
+.section--tinted { background: var(--color-bg-alt); }
 
 .section, .home-hero, .page-hero, .quote-band { position: relative; overflow: hidden; }
 .section > .wrap, .home-hero > .wrap, .page-hero > .wrap, .quote-band > .wrap { position: relative; z-index: 1; }
@@ -169,10 +171,6 @@ a.activity-card:hover { background: var(--color-bg-alt); }
 .text-separator a { color: var(--color-accent); font-size: 13.5px; text-decoration: none; font-weight: 500; }
 .text-separator a::after { content: '→'; margin-left: 6px; }
 
-/* ── Washi illustration accents ──────────────────────────────────── */
-.washi-accent { width: 64px; height: 64px; opacity: 0.9; }
-.washi-divider { display: flex; justify-content: center; padding: 8px 0; }
-
 /* ── Quote card ─────────────────────────────────────────────────── */
 .quote-band { background: var(--color-bg-alt); padding: 72px 0; }
 .quote-card { max-width: 420px; margin: 0 auto; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 36px 40px; text-align: center; }
@@ -204,9 +202,18 @@ a.activity-card:hover { background: var(--color-bg-alt); }
 }
 .scroll-top[hidden] { display: none; }
 
-/* ── Reveal ───────────────────────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.4s ease, transform 0.4s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* ── Reveal ───────────────────────────────────────────────────
+   Progressive enhancement: content is visible by default. Only once
+   JS confirms it can drive the animation does it get hidden, so a
+   script failure or a throttled tab can never blank the page. */
+.reveal { transition: opacity 0.4s ease, transform 0.4s ease; }
+html.js-reveal .reveal { opacity: 0; transform: translateY(16px); }
+html.js-reveal .reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal .reveal { opacity: 1; transform: none; }
+  .reveal { transition: none; }
+}
 
 /* ── Inner page hero ─────────────────────────────────────────── */
 .page-hero { padding: 72px 0 52px; text-align: center; }
