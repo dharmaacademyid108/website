@@ -21,7 +21,7 @@
   --font-body: 'Inter', 'Noto Sans', system-ui, sans-serif;
 
   --max-width: 1140px;
-  --spacing-section: 96px;
+  --spacing-section: 108px;
   --padding-x-mobile: 20px;
   --padding-x-desktop: 24px;
   --radius-card: 4px;
@@ -81,20 +81,22 @@ p:last-child { margin-bottom: 0; }
 .site-nav__drawer__social { display: flex; gap: 16px; font-size: 13px; color: var(--color-ink-muted); }
 
 /* ── Homepage Hero ────────────────────────────────────────── */
-.home-hero { background: var(--color-bg); padding: 56px 0 0; }
-.home-hero__inner { display: flex; align-items: center; gap: 56px; }
-.home-hero__text { flex: 1 1 420px; }
-.home-hero__text p.eyebrow { font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin: 0 0 18px; }
-.home-hero__text h1 { font-size: clamp(32px, 4.2vw, 46px); line-height: 1.15; margin: 0 0 20px; color: var(--color-ink); }
-.home-hero__text p.sub { font-size: 15.5px; color: var(--color-ink-muted); line-height: 1.75; max-width: 440px; margin: 0 0 30px; }
-.home-hero__actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-.home-hero__image { flex: 1 1 460px; width: 100%; }
-.home-hero__carousel { position: relative; border-radius: var(--radius-card); overflow: hidden; }
-.home-hero__carousel img { width: 100%; height: auto; display: none; }
-.home-hero__carousel img.is-active { display: block; }
-.home-hero__dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
-.home-hero__dots button { width: 7px; height: 7px; border-radius: 50%; border: none; background: var(--color-border); padding: 0; cursor: pointer; }
-.home-hero__dots button.is-active { background: var(--color-accent); }
+.home-hero { background: var(--color-bg); padding: 76px 0 92px; }
+.home-hero__inner { display: flex; align-items: center; gap: 68px; }
+.home-hero__text { flex: 1 1 440px; }
+.home-hero__eyebrow-row { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.home-hero__eyebrow-row .ink-mini { width: 46px; height: 46px; mix-blend-mode: multiply; flex-shrink: 0; }
+.home-hero__text p.eyebrow { font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin: 0; }
+.home-hero__text h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.12; margin: 0 0 24px; color: var(--color-ink); }
+.home-hero__text p.sub { font-size: 16px; color: var(--color-ink-muted); line-height: 1.8; max-width: 440px; margin: 0 0 34px; }
+.home-hero__actions { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+.home-hero__image { flex: 1 1 480px; width: 100%; border-radius: var(--radius-card); overflow: hidden; }
+.home-hero__image img { width: 100%; height: auto; }
+
+/* ── Ink-wash accents ────────────────────────────────────────── */
+.ink-divider { display: flex; justify-content: center; padding: 4px 0; }
+.ink-divider img { width: 104px; height: 104px; mix-blend-mode: multiply; }
+.section-header .ink-accent { width: 88px; height: 88px; mix-blend-mode: multiply; margin: 0 auto 6px; }
 
 /* ── Section generic ──────────────────────────────────────── */
 .section { padding: var(--spacing-section) 0; }
