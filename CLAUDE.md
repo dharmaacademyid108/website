@@ -45,9 +45,15 @@ website/
 "Dharma Academy ID" brand — editorial, tranquil, Scandinavian x Japanese direction, built from a PDF brief + mood board (2026-07-18). This is the same visual system as Website #3, but with structural depth borrowed from plumvillage.org as a *pattern* reference (not visual — see `body::before` background texture, `.home-hero__carousel`, `.featured-grid`/`.featured-list` for the "one big + smaller list" layout, `.text-separator`, `.quote-card`, `.card__tag`, and `washi-*.svg` line-illustration accents in `assets/images/illustrations/`).
 
 ## Current state
-- Homepage (`index.html`) complete: Hero carousel → Who We Are → Japan banner → 4-way "start here" cards → Kegiatan Terbaru (featured + list layout) → quote card → Books (tagged cards) → CTA
-- Remaining pages (about, lesson, event, book, contact, donation, privilege) not yet built — same design system, to be built next
-- Photography is Canva-AI-generated placeholder (editorial/warm style) — swap for real photos when ready, same filenames
+All 8 pages built: `index`, `about`, `lesson`, `event`, `book`, `privilege`, `contact`, `donation`.
+
+- **Illustrations:** real sumi-e ink-wash art in `assets/images/illustrations/ink-*.jpg` (branch, teacup, figures, book), generated in Canva, applied via `mix-blend-mode: multiply` so the cream plate blends into the paper background. Used as `.ink-divider`, `.page-hero .ink-accent`, and the hero `.ink-mini`.
+- **Photography** is Canva-AI-generated placeholder (warm editorial style) — swap for real photos when ready, same filenames.
+- **Still to fill in (marked `[Akan dilengkapi]` in the HTML):** email, WhatsApp, Instagram/YouTube URLs, monthly contribution amount, bank transfer details (both lesson + donation), Good Karma Lab registration process. Gallery/card image slots on about/event/book are empty placeholder boxes awaiting real photos.
+- **Curriculum topics on `lesson.html` are drafted, not confirmed** — the 8 intro topic titles/descriptions were written as plausible placeholders and need Bobo's real curriculum.
+
+## Naming rule (important)
+Always pair "Shinrankai" with its context (Toyama, Japan; Kentetsu Takamori Sensei). Never lead with "International Buddhist Academy" alone — that phrase alone surfaces an unrelated Nepal organisation in search. Never raise "cult" concerns proactively; let documented activity speak.
 - This branch (`website-2-plum-village`) and Website #3 (`website-3-dharma-academy-id/` on branch `website-3-dharma-academy-id`) share the same brand; #2 is the more structurally complete build. Website #1 (`main` branch, `website/`) is the original live warm/rounded design, unrelated brand.
 
 ## Working rules
