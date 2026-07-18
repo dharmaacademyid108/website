@@ -47,6 +47,16 @@ website/
 ## Current state
 All 8 pages built: `index`, `about`, `lesson`, `event`, `book`, `privilege`, `contact`, `donation`.
 
+## Visual system (read before adding any ornament)
+Elements must **guide the visitor** and **belong to each other** — Bobo's word for it is *unity*. The rule that creates the unity: every mark echoes the logo's geometry (a ring with an offset dot).
+
+- `.breath` — a hairline carrying the ring+dot, placed **between** sections at genuine idea-transitions. Never centred above a heading (that interrupts reading), never more than ~3 per page.
+- `.sprig` — a neutral growing stem, `position: absolute` in the **margin** (needs a `.section` parent), moss, low opacity, hidden under 1240px. 1–2 per page.
+- `.section--tinted` — linen background marking a section as a distinct module. Wayfinding, not decoration. Drop any `padding-top` override when tinting.
+- `.home-hero::before` / `.page-hero::before` — the soft "natural light" wash.
+
+Pacing target: scrolling should alternate *mark → tone → mark → tone* so the page reads as a calm journey rather than a stack of blocks. Add elements only where they do a job.
+
 - **No decorative illustrations — deliberately.** Sumi-e ink accents (plum branch, tea bowl, seated figures) were tried and removed 2026-07-18: they read as ornament rather than guidance, and as explicitly Japanese, which pushes toward "you are entering a Japanese/Buddhist place" — the opposite of the brief's *"a place where Buddhism becomes understandable."* They also failed the *Effortless clarity* pillar (every element must reduce friction). Texture and wayfinding now come from neutral, non-symbolic devices instead: the paper grain on `body`, a soft `radial-gradient` "natural light" wash on heroes, `.section--tinted` tonal shifts, generous spacing, and hairline rules. If an illustration is ever reintroduced it must guide the visitor, not decorate — and stay culturally neutral.
 - **Photography** is Canva-AI-generated placeholder (warm editorial style) — swap for real photos when ready, same filenames.
 - **Still to fill in (marked `[Akan dilengkapi]` in the HTML):** email, WhatsApp, Instagram/YouTube URLs, monthly contribution amount, bank transfer details (both lesson + donation), Good Karma Lab registration process. Gallery/card image slots on about/event/book are empty placeholder boxes awaiting real photos.
