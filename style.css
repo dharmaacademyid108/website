@@ -109,6 +109,23 @@ p:last-child { margin-bottom: 0; }
 /* ── Tonal section — wayfinding, not decoration ─────────────── */
 .section--tinted { background: var(--color-bg-alt); }
 
+/* ── Breath mark ──────────────────────────────────────────────
+   Section break between ideas. A hairline carrying the brand's own
+   geometry (ring + offset dot), so the marks belong to the logo and
+   to each other rather than being loose ornaments. */
+.breath { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 6px 0; }
+.breath::before, .breath::after { content: ''; height: 1px; width: 72px; background: var(--color-border); }
+.breath svg { width: 20px; height: 20px; color: var(--color-highlight); opacity: 0.85; flex-shrink: 0; }
+.breath--soft::before, .breath--soft::after { width: 48px; }
+
+/* ── Sprig ────────────────────────────────────────────────────
+   A neutral growing form — warmth and "wisdom in daily life" without
+   belonging to any one culture. Used sparingly, always in the margin. */
+.sprig { position: absolute; pointer-events: none; color: var(--color-moss); opacity: 0.4; z-index: 0; }
+.sprig--right { right: 2%; top: 12%; width: 78px; }
+.sprig--left { left: 2%; bottom: 10%; width: 66px; transform: scaleX(-1); }
+@media (max-width: 1240px) { .sprig { display: none; } }
+
 .section, .home-hero, .page-hero, .quote-band { position: relative; overflow: hidden; }
 .section > .wrap, .home-hero > .wrap, .page-hero > .wrap, .quote-band > .wrap { position: relative; z-index: 1; }
 
