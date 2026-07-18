@@ -67,6 +67,30 @@
     });
   }
 
+  /* ── Hero Carousel ────────────────────────────────────────── */
+  const carousel = document.getElementById('hero-carousel');
+  const dotsWrap = document.getElementById('hero-dots');
+
+  if (carousel && dotsWrap) {
+    const slides = carousel.querySelectorAll('img');
+    const dots = dotsWrap.querySelectorAll('button');
+    let current = 0;
+
+    function goTo(index) {
+      slides[current].classList.remove('is-active');
+      dots[current].classList.remove('is-active');
+      current = index;
+      slides[current].classList.add('is-active');
+      dots[current].classList.add('is-active');
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    setInterval(() => {
+      goTo((current + 1) % slides.length);
+    }, 5000);
+  }
+
   /* ── Active nav link ──────────────────────────────────────── */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.site-nav__links a, .site-nav__drawer a').forEach(link => {

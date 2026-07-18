@@ -32,20 +32,23 @@ website/
 
 ## Design system (key CSS variables in style.css)
 ```css
---color-bg:          #FFF8F1;   /* warm cream */
---color-bg-alt:      #FFEFE2;   /* soft peach */
---color-bg-dark:     #2B2420;   /* footer/dark sections */
---color-accent:      #D97F56;   /* terracotta — links, icon tints */
---color-primary:     #2F5D50;   /* deep teal — primary buttons, Japan banner */
---font-body: 'Nunito', system-ui, sans-serif;
---max-width: 1100px;
+--color-bg:          #F8F5EF;   /* warm paper */
+--color-bg-alt:      #EEE7DB;   /* soft linen */
+--color-ink:         #2F2F2C;   /* charcoal ink — primary text */
+--color-primary:     #3F544A;   /* forest green — primary buttons, Japan banner */
+--color-accent:      #B4715B;   /* muted clay — links, tags */
+--color-highlight:   #C9A227;   /* morning gold — logo, CTA button */
+--font-display: 'DM Serif Display', Georgia, serif;
+--font-body: 'Inter', 'Noto Sans', system-ui, sans-serif;
+--max-width: 1140px;
 ```
-Warm, rounded, community-feel direction (confirmed 2026-07-05, replacing the earlier brown/gold and pink/purple "Lollipop" test — both retired). CSS follows BEM-inspired naming: `.block__element--modifier`. Logo mark and hero/section illustrations are hand-built placeholder SVGs in `assets/images/` — swap for real logo/photos when ready, same filenames/dimensions.
+"Dharma Academy ID" brand — editorial, tranquil, Scandinavian x Japanese direction, built from a PDF brief + mood board (2026-07-18). This is the same visual system as Website #3, but with structural depth borrowed from plumvillage.org as a *pattern* reference (not visual — see `body::before` background texture, `.home-hero__carousel`, `.featured-grid`/`.featured-list` for the "one big + smaller list" layout, `.text-separator`, `.quote-card`, `.card__tag`, and `washi-*.svg` line-illustration accents in `assets/images/illustrations/`).
 
 ## Current state
-- Homepage (`index.html`) is rebuilt around the new `docs/GUIDELINES.md` direction: Hero, Who We Are, Japan Connection banner, What We Teach, 4 Activities (Kelas Intro, Good Karma Lab, Jadi Siswa Resmi, Acara Jepang), Recent Events, Books, Final CTA
-- Remaining pages (about, lesson, event, book, contact, donation, privilege) are not yet built — same design system, to be built next
-- Real content (photos, logo, copy details, social links, WhatsApp/email) is still placeholder
+- Homepage (`index.html`) complete: Hero carousel → Who We Are → Japan banner → 4-way "start here" cards → Kegiatan Terbaru (featured + list layout) → quote card → Books (tagged cards) → CTA
+- Remaining pages (about, lesson, event, book, contact, donation, privilege) not yet built — same design system, to be built next
+- Photography is Canva-AI-generated placeholder (editorial/warm style) — swap for real photos when ready, same filenames
+- This branch (`website-2-plum-village`) and Website #3 (`website-3-dharma-academy-id/` on branch `website-3-dharma-academy-id`) share the same brand; #2 is the more structurally complete build. Website #1 (`main` branch, `website/`) is the original live warm/rounded design, unrelated brand.
 
 ## Working rules
 - **No frameworks** — plain HTML/CSS/JS only
