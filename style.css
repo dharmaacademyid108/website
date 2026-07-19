@@ -110,11 +110,17 @@ p:last-child { margin-bottom: 0; }
    Job: fill negative space and mark a change of ground. The surface
    itself becomes linen; nothing is placed on it, so nothing can read
    as stuck on. From the MATERIAL row of the mood board. */
-.section--tinted, .quote-band {
-  background-color: var(--color-bg-alt);
-  background-image:
-    repeating-linear-gradient(90deg, rgba(90,80,60,.032) 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(0deg,  rgba(90,80,60,.032) 0 1px, transparent 1px 4px);
+.section--tinted, .quote-band { background-color: var(--color-bg-alt); }
+.section--tinted::after, .quote-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("assets/images/texture-linen.jpg");
+  background-size: 300px;          /* scaled well down so the weave reads fine, not like burlap */
+  mix-blend-mode: multiply;
+  opacity: 0.28;
 }
 
 /* ── PHOTOGRAPH BAND — the human breath ───────────────────────
@@ -127,8 +133,8 @@ p:last-child { margin-bottom: 0; }
    Job: sit beside the text as a companion image, at a size that
    matches it and aligned to the same column, so it belongs to the
    composition rather than resting on top of it. */
-.content-split__art { flex: 1 1 380px; width: 100%; }
-.content-split__art svg { width: 100%; height: auto; }
+.content-split__art { flex: 1 1 380px; width: 100%; border-radius: var(--radius-card); overflow: hidden; }
+.content-split__art img { width: 100%; height: auto; }
 
 /* ── Breath mark ──────────────────────────────────────────────
    Section break between ideas. A hairline carrying the brand's own
