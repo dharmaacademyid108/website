@@ -106,8 +106,29 @@ p:last-child { margin-bottom: 0; }
   z-index: 0;
 }
 
-/* ── Tonal section — wayfinding, not decoration ─────────────── */
-.section--tinted { background: var(--color-bg-alt); }
+/* ── MATERIAL — the quiet in between ──────────────────────────
+   Job: fill negative space and mark a change of ground. The surface
+   itself becomes linen; nothing is placed on it, so nothing can read
+   as stuck on. From the MATERIAL row of the mood board. */
+.section--tinted, .quote-band {
+  background-color: var(--color-bg-alt);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(90,80,60,.032) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(0deg,  rgba(90,80,60,.032) 0 1px, transparent 1px 4px);
+}
+
+/* ── PHOTOGRAPH BAND — the human breath ───────────────────────
+   Job: a full-width pause of real people between two ideas.
+   Serves Human First. Used sparingly — at most once per page. */
+.photo-band { width: 100%; height: 300px; overflow: hidden; }
+.photo-band img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+
+/* ── EDITORIAL ILLUSTRATION — ideas that can't be photographed ─
+   Job: sit beside the text as a companion image, at a size that
+   matches it and aligned to the same column, so it belongs to the
+   composition rather than resting on top of it. */
+.content-split__art { flex: 1 1 380px; width: 100%; }
+.content-split__art svg { width: 100%; height: auto; }
 
 /* ── Breath mark ──────────────────────────────────────────────
    Section break between ideas. A hairline carrying the brand's own
@@ -189,7 +210,7 @@ a.activity-card:hover { background: var(--color-bg-alt); }
 .text-separator a::after { content: '→'; margin-left: 6px; }
 
 /* ── Quote card ─────────────────────────────────────────────────── */
-.quote-band { background: var(--color-bg-alt); padding: 72px 0; }
+.quote-band { padding: 72px 0; }
 .quote-card { max-width: 420px; margin: 0 auto; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: 36px 40px; text-align: center; }
 .quote-card__mark { font-family: var(--font-display); font-size: 40px; color: var(--color-accent); line-height: 1; margin-bottom: 8px; }
 .quote-card blockquote { font-family: var(--font-display); font-size: 20px; color: var(--color-primary); margin: 0; line-height: 1.4; }
@@ -294,6 +315,7 @@ html.js-reveal .reveal.visible { opacity: 1; transform: none; }
 
 /* ── Mobile ───────────────────────────────────────────────────── */
 @media (max-width: 900px) {
+  .photo-band { height: 190px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .check-list { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; gap: 36px; }
