@@ -150,6 +150,25 @@ p:last-child { margin-bottom: 0; }
   mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 55%, transparent 97%);
 }
 
+/* ── Truth lines ──────────────────────────────────────────────
+   A three-step progression that reads as an inscription, not body
+   copy. Set in the display serif with a hairline rule so it holds
+   its own space and the rhythm carries the emphasis. */
+.truth-lines {
+  margin: 30px 0 32px;
+  padding-left: 22px;
+  border-left: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--color-primary);
+}
+.truth-lines span { display: block; }
+.truth-lines span:last-child { color: var(--color-accent); }
+@media (max-width: 640px) {
+  .truth-lines { font-size: 16.5px; padding-left: 18px; }
+}
+
 /* ── Breath mark ──────────────────────────────────────────────
    Section break between ideas. A hairline carrying the brand's own
    geometry (ring + offset dot), so the marks belong to the logo and
