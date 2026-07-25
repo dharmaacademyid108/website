@@ -150,6 +150,77 @@ p:last-child { margin-bottom: 0; }
   mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 55%, transparent 97%);
 }
 
+/* ── Event rail ───────────────────────────────────────────────
+   Latest local activities, scrolled horizontally. Cards are sized
+   so the next one peeks in — that edge is the affordance, so no
+   arrows are needed. */
+.event-rail {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+.event-rail::-webkit-scrollbar { height: 6px; }
+.event-rail::-webkit-scrollbar-track { background: transparent; }
+.event-rail::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+.event-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease;
+}
+.event-card:hover { border-color: var(--color-primary); }
+.event-card__image { height: 170px; background: var(--color-bg-alt); }
+.event-card__body { padding: 16px 18px 20px; }
+.event-card__body h3 { font-size: 17px; margin: 0 0 6px; color: var(--color-ink); }
+.event-card__body p { font-size: 13px; color: var(--color-ink-muted); line-height: 1.6; margin: 0; }
+.event-card__meta { display: block; font-size: 12px; color: #9a9488; margin-top: 9px; }
+
+/* ── Japan feature ────────────────────────────────────────────
+   Toyama gets its own weight in the hierarchy: a split card, text
+   on the primary tone beside a grid of photographs. */
+.japan-feature {
+  margin-top: 52px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-primary);
+}
+.japan-feature__text { padding: 40px 38px; color: #EAEFE6; }
+.japan-feature__text h3 { font-size: 24px; color: var(--color-white); margin: 0 0 10px; }
+.japan-feature__text p { font-size: 14.5px; line-height: 1.75; margin: 0 0 18px; color: #CFD9C9; }
+.japan-feature__text a { font-size: 13.5px; font-weight: 600; color: #D9C98F; text-decoration: none; }
+.japan-feature__text a:hover { text-decoration: underline; }
+.japan-feature__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.japan-feature__photo { background: var(--color-bg-alt); min-height: 130px; }
+
+/* ── Voices ───────────────────────────────────────────────────── */
+.voices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.voice {
+  margin: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 24px 26px;
+}
+.voice p { font-family: var(--font-display); font-size: 17px; line-height: 1.7; color: var(--color-ink); margin: 0 0 14px; }
+.voice footer { font-size: 12.5px; color: #9a9488; }
+.placeholder-note { font-size: 12.5px; color: #9a9488; font-style: italic; text-align: center; margin: 22px 0 0; }
+
+/* ── FAQ ──────────────────────────────────────────────────────── */
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 40px; }
+.faq-item { border-top: 1px solid var(--color-border); padding: 18px 0 10px; }
+.faq-item h3 { font-size: 17px; margin: 0 0 7px; color: var(--color-ink); }
+.faq-item p { font-size: 13.5px; color: var(--color-ink-muted); line-height: 1.7; margin: 0; }
+
 /* ── Truth lines ──────────────────────────────────────────────
    A three-step progression that reads as an inscription, not body
    copy. Set in the display serif with a hairline rule so it holds
@@ -415,6 +486,10 @@ html.js-reveal .reveal.visible { opacity: 1; transform: none; }
   .gateway__art { width: auto; object-fit: unset; top: 50%; transform: translateY(-50%); }
   .gateway__body { max-width: 62%; }
   .gateway__mini { padding-right: 110px; }
+  .japan-feature { grid-template-columns: 1fr; }
+  .japan-feature__text { padding: 30px 26px; }
+  .voices { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; gap: 0; }
   .card-grid-3 { grid-template-columns: 1fr; }
   .site-nav__links { display: none; }
   .site-nav__toggle { display: block; }
