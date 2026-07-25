@@ -5,15 +5,15 @@
 
 :root {
   /* Colors */
-  --color-bg:          #F8F5EF;  /* warm paper */
-  --color-bg-alt:      #EEE7DB;  /* soft linen */
-  --color-ink:         #2F2F2C;  /* charcoal ink */
-  --color-ink-muted:   #6B665C;
-  --color-primary:     #3F544A;  /* forest green — primary buttons, headings accent */
-  --color-primary-hover:#324237;
-  --color-accent:      #B4715B;  /* muted clay — links */
-  --color-highlight:   #C9A227;  /* morning gold — logo, small highlights */
-  --color-moss:        #8F9366;  /* moss — tertiary accent */
+  --color-bg:          #F8F4EC;  /* warm paper */
+  --color-bg-alt:      #EDE7D9;  /* soft linen */
+  --color-ink:         #332F27;  /* walnut ink */
+  --color-ink-muted:   #5D574B;
+  --color-primary:     #57624E;  /* smoked moss — primary buttons, headings accent */
+  --color-primary-hover:#46503E;
+  --color-accent:      #8A6248;  /* walnut — links */
+  --color-highlight:   #A68A3E;  /* deep grass — logo, small highlights */
+  --color-moss:        #878B75;  /* faded moss — tertiary accent */
   --color-white:       #FFFFFF;
   --color-border:      #E2D9C8;
 
@@ -82,13 +82,13 @@ p:last-child { margin-bottom: 0; }
 
 /* ── Homepage Hero ────────────────────────────────────────── */
 .home-hero { background: var(--color-bg); padding: 76px 0 92px; }
-.home-hero__inner { display: flex; align-items: center; gap: 68px; }
+.home-hero__inner { display: flex; align-items: flex-start; gap: 68px; }
 .home-hero__text { flex: 1 1 440px; }
 .home-hero__eyebrow-row { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
 .home-hero__eyebrow-row .ink-mini { width: 46px; height: 46px; mix-blend-mode: multiply; flex-shrink: 0; }
-.home-hero__text p.eyebrow { font-weight: 500; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); margin: 0; }
-.home-hero__text h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.12; margin: 0 0 24px; color: var(--color-ink); }
-.home-hero__text p.sub { font-size: 16px; color: var(--color-ink-muted); line-height: 1.8; max-width: 440px; margin: 0 0 34px; }
+.home-hero__text p.eyebrow { font-weight: 500; font-size: 14px; letter-spacing: 0.01em; text-transform: none; color: var(--color-accent); margin: 0 0 18px; line-height: 1.5; text-wrap: pretty; }
+.home-hero__text h1 { font-size: clamp(34px, 4.4vw, 50px); line-height: 1.16; margin: 0 0 24px; color: var(--color-ink); text-wrap: balance; }
+.home-hero__text p.sub { font-size: 16px; color: var(--color-ink-muted); line-height: 1.8; max-width: 440px; margin: 0 0 34px; text-wrap: pretty; }
 .home-hero__actions { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
 .home-hero__image { flex: 1 1 480px; width: 100%; border-radius: var(--radius-card); overflow: hidden; }
 .home-hero__image img { width: 100%; height: auto; }
@@ -117,7 +117,7 @@ p:last-child { margin-bottom: 0; }
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("assets/images/texture-linen.jpg");
+  background-image: url("assets/images/textures/texture-linen.jpg");
   background-size: 300px;          /* scaled well down so the weave reads fine, not like burlap */
   mix-blend-mode: multiply;
   opacity: 0.28;
@@ -133,8 +133,22 @@ p:last-child { margin-bottom: 0; }
    Job: sit beside the text as a companion image, at a size that
    matches it and aligned to the same column, so it belongs to the
    composition rather than resting on top of it. */
-.content-split__art { flex: 1 1 380px; width: 100%; border-radius: var(--radius-card); overflow: hidden; }
+.content-split__art { flex: 1 1 380px; width: 100%; }
 .content-split__art img { width: 100%; height: auto; }
+.content-split__art svg { width: 100%; height: auto; display: block; aspect-ratio: 1456 / 1088; }
+/* Paper variant: card takes the illustration's own paper tone so the
+   ink reads as drawn on the card; a soft mask melts the jpg edge. */
+.content-split__art--paper {
+  background: #FEF4DC;
+  border: 1px solid #EAE2D2;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+.content-split__art--paper img {
+  display: block;
+  -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 55%, transparent 97%);
+  mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 55%, transparent 97%);
+}
 
 /* ── Breath mark ──────────────────────────────────────────────
    Section break between ideas. A hairline carrying the brand's own
@@ -187,6 +201,54 @@ a.activity-card:hover { background: var(--color-bg-alt); }
 .activity-card__icon { width: 30px; height: 30px; color: var(--color-primary); margin-bottom: 20px; }
 .activity-card h3 { font-family: var(--font-body); font-weight: 600; font-size: 15px; margin: 0 0 8px; color: var(--color-ink); }
 .activity-card p { font-size: 13px; color: var(--color-ink-muted); margin: 0; }
+
+/* ── Gateway (Empat cara → one door, three steps beyond) ─────────
+   The intro class is the single entrance; the stack shows the path
+   that follows. Each card's background matches its illustration's
+   paper tone, and the art dissolves into it with a soft mask so ink
+   reads as drawn on the card, not pasted onto it. */
+.gateway { display: grid; grid-template-columns: 1.25fr 1fr; gap: 22px; }
+.gateway__feature {
+  position: relative; border-radius: var(--radius-card); overflow: hidden;
+  background: #FDF6E5; border: 1px solid #EAE2D2;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 44px 40px; min-height: 380px;
+  text-decoration: none; color: inherit;
+}
+.gateway__art {
+  position: absolute; right: 0; top: 0;
+  height: 100%; width: 40%; object-fit: cover; object-position: 55% center;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to left, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 78%, transparent 100%);
+}
+.gateway__body { position: relative; max-width: 56%; }
+.gateway__body h3 { font-size: 26px; margin: 0 0 8px; color: var(--color-ink); }
+.gateway__body p { font-size: 15px; color: var(--color-ink-muted); line-height: 1.65; margin: 0; }
+.gateway__tag {
+  display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--color-white); background: var(--color-highlight);
+  padding: 4px 10px; border-radius: 3px; margin-bottom: 14px;
+}
+.gateway__btn { margin-top: 22px; align-self: flex-start; }
+.gateway__stack { display: flex; flex-direction: column; gap: 14px; }
+.gateway__mini {
+  position: relative; border-radius: var(--radius-card); overflow: hidden;
+  border: 1px solid #EAE2D2; flex: 1;
+  padding: 20px 120px 20px 22px;
+  display: flex; flex-direction: column; justify-content: center;
+  text-decoration: none; color: inherit;
+  transition: filter 0.2s ease;
+}
+.gateway__mini:hover { filter: brightness(0.97); }
+.gateway__mini h3 { font-family: var(--font-body); font-weight: 600; font-size: 15px; margin: 0 0 4px; color: var(--color-ink); }
+.gateway__mini p { font-size: 13px; color: var(--color-ink-muted); line-height: 1.6; margin: 0; }
+.gateway__mini-art {
+  position: absolute; right: -34px; top: 50%; transform: translateY(-46%);
+  width: 160px; height: auto; pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 60% 64% at 50% 50%, #000 38%, transparent 78%);
+  mask-image: radial-gradient(ellipse 60% 64% at 50% 50%, #000 38%, transparent 78%);
+}
 
 /* ── Card grid (events, books — 3-up) ─────────────── */
 .card-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -329,6 +391,11 @@ html.js-reveal .reveal.visible { opacity: 1; transform: none; }
   .home-hero__inner, .content-split, .content-split--reverse, .featured-grid { flex-direction: column; }
   .featured-grid { display: flex; }
   .card-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .gateway { grid-template-columns: 1fr; }
+  .gateway__feature { min-height: 300px; padding: 32px 26px; }
+  .gateway__art { width: auto; object-fit: unset; top: 50%; transform: translateY(-50%); }
+  .gateway__body { max-width: 62%; }
+  .gateway__mini { padding-right: 110px; }
   .card-grid-3 { grid-template-columns: 1fr; }
   .site-nav__links { display: none; }
   .site-nav__toggle { display: block; }
