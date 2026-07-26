@@ -343,9 +343,11 @@ div.quote-band > .wrap { z-index: auto; }
   border-right: 1px solid rgba(248, 244, 236, 0.28);
   flex-shrink: 0;
 }
+/* The official Shinrankai emblem, adapted: wordmark cropped, white
+   ground keyed out, artwork itself unchanged. */
 .japan-banner__mark {
-  width: 56px; height: 56px;
-  color: #E7EDE3;
+  width: 74px;
+  height: auto;
   opacity: 0.95;
 }
 .japan-banner__roman {
