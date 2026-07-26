@@ -62,6 +62,24 @@ p:last-child { margin-bottom: 0; }
 }
 .btn-primary { background: var(--color-primary); color: var(--color-bg); }
 .btn-primary:hover { background: var(--color-primary-hover); }
+/* Nav CTA: the one place the page should catch the eye. The muted
+   palette leaves a green button reading as just another surface, so
+   this takes the highlight tone with dark ink for contrast. */
+.site-nav__links .btn-primary,
+.site-nav__drawer .btn-primary {
+  background: var(--color-highlight);
+  color: var(--color-ink);
+  font-weight: 600;
+  padding: 11px 24px;
+  box-shadow: 0 1px 2px rgba(51, 47, 39, 0.16);
+  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.site-nav__links .btn-primary:hover,
+.site-nav__drawer .btn-primary:hover {
+  background: #B99B48;
+  box-shadow: 0 3px 8px rgba(51, 47, 39, 0.22);
+  transform: translateY(-1px);
+}
 .btn-text { padding: 0; min-height: auto; color: var(--color-accent); font-weight: 500; }
 .btn-text::after { content: '→'; margin-left: 6px; }
 
@@ -136,18 +154,37 @@ p:last-child { margin-bottom: 0; }
 .content-split__art { flex: 1 1 380px; width: 100%; }
 .content-split__art img { width: 100%; height: auto; }
 .content-split__art svg { width: 100%; height: auto; display: block; aspect-ratio: 1456 / 1088; }
-/* Paper variant: card takes the illustration's own paper tone so the
-   ink reads as drawn on the card; a soft mask melts the jpg edge. */
+/* Paper variant: no card at all. The artwork's own paper tone is
+   pre-shifted to the page background, so a soft mask is enough to
+   dissolve its edges — the ink appears drawn straight onto the page. */
 .content-split__art--paper {
-  background: #FEF4DC;
-  border: 1px solid #EAE2D2;
-  border-radius: var(--radius-card);
-  overflow: hidden;
+  background: none;
+  border: 0;
+  border-radius: 0;
 }
 .content-split__art--paper img {
   display: block;
-  -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 55%, transparent 97%);
-  mask-image: radial-gradient(ellipse 68% 72% at 50% 50%, #000 55%, transparent 97%);
+  -webkit-mask-image: radial-gradient(ellipse 72% 76% at 50% 50%, #000 42%, transparent 92%);
+  mask-image: radial-gradient(ellipse 72% 76% at 50% 50%, #000 42%, transparent 92%);
+}
+
+/* ── Quote with growth mark ───────────────────────────────────
+   No card. The illustration's paper is pre-shifted to the linen
+   band and its edges masked, so image and words share one surface. */
+.quote-growth { max-width: 620px; margin: 0 auto; text-align: center; }
+.quote-growth img {
+  width: 100%; max-width: 430px; height: auto; margin: 0 auto 4px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 74% at 50% 52%, #000 40%, transparent 92%);
+  mask-image: radial-gradient(ellipse 70% 74% at 50% 52%, #000 40%, transparent 92%);
+}
+.quote-growth blockquote {
+  font-family: var(--font-display);
+  font-size: 23px; line-height: 1.55; color: var(--color-primary);
+  margin: 0; text-wrap: balance;
+}
+@media (max-width: 640px) {
+  .quote-growth blockquote { font-size: 19px; }
+  .quote-growth img { max-width: 320px; }
 }
 
 /* ── Event rail ───────────────────────────────────────────────
@@ -280,6 +317,26 @@ p:last-child { margin-bottom: 0; }
 /* ── Japan connection banner ──────────────────────────────────── */
 .japan-banner { background: var(--color-primary); color: var(--color-bg); padding: 36px 0; }
 .japan-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+/* The parent organisation's name set in type — not a reproduction of
+   their logo. Swap this lockup for the official mark once Toyama
+   supplies the asset file. */
+.japan-banner__lockup {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding-right: 26px; margin-right: 4px;
+  border-right: 1px solid rgba(248, 244, 236, 0.28);
+  flex-shrink: 0;
+}
+.japan-banner__kanji {
+  font-family: var(--font-display);
+  font-size: 27px; line-height: 1.1; color: var(--color-white);
+  letter-spacing: 0.06em;
+}
+.japan-banner__roman {
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #C3CEBE; margin-top: 7px;
+}
+.japan-banner__body { flex: 1 1 auto; }
 .japan-banner h3 { font-size: 19px; margin: 0 0 6px; }
 .japan-banner p { font-family: var(--font-body); font-size: 13.5px; margin: 0; color: #D7DED8; }
 .japan-banner a { color: var(--color-bg); font-weight: 500; font-size: 13.5px; text-decoration: none; border-bottom: 1px solid var(--color-bg); white-space: nowrap; }
