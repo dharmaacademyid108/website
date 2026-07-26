@@ -172,10 +172,27 @@ p:last-child { margin-bottom: 0; }
    No card. The illustration's paper is pre-shifted to the linen
    band and its edges masked, so image and words share one surface. */
 .quote-growth { max-width: 620px; margin: 0 auto; text-align: center; }
+/* Paper is normalised to white and multiplied onto the band, so the
+   linen weave passes through the artwork instead of being covered.
+   No mask needed — white simply leaves the backdrop untouched.
+   For the blend to reach the texture, the band must not isolate it:
+   its weave moves to ::before (painting under content by DOM order)
+   and the wrap drops its z-index so no stacking context is created. */
+div.quote-band::after { content: none; }
+div.quote-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("assets/images/textures/texture-linen.jpg");
+  background-size: 300px;
+  mix-blend-mode: multiply;
+  opacity: 0.28;
+}
+div.quote-band > .wrap { z-index: auto; }
 .quote-growth img {
-  width: 100%; max-width: 430px; height: auto; margin: 0 auto 4px;
-  -webkit-mask-image: radial-gradient(ellipse 70% 74% at 50% 52%, #000 40%, transparent 92%);
-  mask-image: radial-gradient(ellipse 70% 74% at 50% 52%, #000 40%, transparent 92%);
+  width: 100%; max-width: 440px; height: auto; margin: 0 auto 6px;
+  mix-blend-mode: multiply;
 }
 .quote-growth blockquote {
   font-family: var(--font-display);
@@ -326,10 +343,10 @@ p:last-child { margin-bottom: 0; }
   border-right: 1px solid rgba(248, 244, 236, 0.28);
   flex-shrink: 0;
 }
-.japan-banner__kanji {
-  font-family: var(--font-display);
-  font-size: 27px; line-height: 1.1; color: var(--color-white);
-  letter-spacing: 0.06em;
+.japan-banner__mark {
+  width: 56px; height: 56px;
+  color: #E7EDE3;
+  opacity: 0.95;
 }
 .japan-banner__roman {
   font-family: var(--font-body);
